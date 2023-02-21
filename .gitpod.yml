@@ -23,7 +23,5 @@ tasks:
       && sudo apt update 
       && sudo apt upgrade -y
       && sudo apt install -y python3.11
-      && /usr/bin/python3.11 --version
-      
-  - name:  Check Python 3.11 Version
+      && /usr/bin/python3.11 --version   
     command: /usr/bin/python3.11 --version
