@@ -17,7 +17,7 @@ github:
 
 tasks:
   - name: Update OS Packages
-    init: |
+    before: |
       sudo apt install -y apt-utils --no-install-recommends apt-utils
       sudo add-apt-repository ppa:deadsnakes/ppa -y
       sudo apt update 
