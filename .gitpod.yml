@@ -17,12 +17,13 @@ github:
 
 tasks:
   - name: Update OS Packages
-    init: > 
+    init: >
       sudo apt install -y apt-utils --no-install-recommends apt-utils
       && sudo add-apt-repository ppa:deadsnakes/ppa -y
       && sudo apt update 
       && sudo apt upgrade -y
       && sudo apt install -y python3.11
+      && /usr/bin/python3.11 --version
       
   - name:  Check Python 3.11 Version
     command: /usr/bin/python3.11 --version
