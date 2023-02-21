@@ -18,9 +18,10 @@ github:
 tasks:
   - name: Update OS Packages
     init: | 
-      sudo add-apt-repository ppa:deadsnakes/ppa -y
       sudo apt update && sudo apt upgrade -y      
-      sudo apt install -y python3.11 apt-utils      
+      sudo apt install -y apt-utils      
+      sudo add-apt-repository ppa:deadsnakes/ppa -y
+      sudo apt update && sudo apt install -y python3.11 
       gp sync-done osupdate
 
   - name: Install Required Packages
