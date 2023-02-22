@@ -3,4 +3,4 @@ tasks:
     init: |
       npm install -y npx     
     command: |
-      npx http-server
+      npx --yes http-server
