@@ -1,20 +1,17 @@
+# gp sync example .gitpod.yml
+# rename file before using
+
 tasks:
-  - name: Rails
-    init: >
-      bundle install &&
-      yarn install --check-files &&
-      rails db:setup &&
-      gp sync-done bundle      
-    command: rails server
-
-  - name: Webpack    
-    init: gp sync-await bundle
-    command: bin/webpack-dev-server
-
-  - name: Redis
-    init: gp sync-await bundle
-    command: redis-server
-
-  - name: Sidekiq
-    init: gp sync-await bundle
-    command: sidekiq
+  - name: Install npx and database
+    before: |
+      npm install -y npx
+    init: |      
+      npm install -y pg pgtools    
+      npx --yes pg
+      gp sync-done dbinstall
+      
+  - name: Install http-server
+    init: |
+      gp sync-await dbinstall
+      npx --yes http-server
+    command: curl http://localhost:8080
