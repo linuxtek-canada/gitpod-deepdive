@@ -1,4 +1,4 @@
-# gp sync example .gitpod.yml
+# example.gpsync.gitpod.yml
 # rename file before using
 
 tasks:
@@ -14,6 +14,6 @@ tasks:
       
   - name: Install http-server
     init: |
-      gp sync-await dbinstall
+      gp sync-await dbinstall      
+    command: |      
       npx --yes http-server
-    command: curl http://localhost:8080
