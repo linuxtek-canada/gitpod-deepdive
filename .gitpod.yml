@@ -4,12 +4,10 @@ tasks:
       bundle install &&
       yarn install --check-files &&
       rails db:setup &&
-      gp sync-done bundle
-      # 'bundle' is an arbitrary name
+      gp sync-done bundle      
     command: rails server
 
-  - name: Webpack
-    # wait for the above 'init' to finish
+  - name: Webpack    
     init: gp sync-await bundle
     command: bin/webpack-dev-server
 
