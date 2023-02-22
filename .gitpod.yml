@@ -5,9 +5,11 @@ tasks:
   - name: Install npx and database
     before: |
       npm install -y npx
-    init: |      
-      npm install -y pg pgtools    
-      npx --yes pg
+    init: |
+      mkdir $THEIA_WORKSPACE_ROOT/node_pg_app
+      cd $THEIA_WORKSPACE_ROOT/node_pg_app
+      npm init -y      
+      npm install -y pg pgtools          
       gp sync-done dbinstall
       
   - name: Install http-server
