@@ -1,0 +1,6 @@
+tasks:
+  - name: Install and run http-webserver using NPM
+    init: |
+      npm install -y npx     
+    command: |
+      npx --yes http-server

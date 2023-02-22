@@ -1,6 +1,16 @@
+# gp sync example .gitpod.yml
+# rename file before using
+
 tasks:
-  - name: Install and run http-webserver using NPM
+  - name: Install npx and database
+    before: |
+      npm install -y npx
+    init: |      
+      npx --yes postgres
+      gp sync-done dbinstall
+
+  - name: Install http-server
     init: |
-      npm install -y npx     
-    command: |
+      gp sync-await dbinstall
       npx --yes http-server
+    command: curl http://localhost:8080
