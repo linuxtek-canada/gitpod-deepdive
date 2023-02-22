@@ -1,3 +1,6 @@
+# example.tasks.gitpod.yml
+# rename to .gitpod.yml before using
+
 tasks:
   - name: Install and run http-webserver using NPM
     init: |

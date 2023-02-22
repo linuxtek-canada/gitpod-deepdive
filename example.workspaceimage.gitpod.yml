@@ -1,3 +1,6 @@
+# example.workspaceimage.gitpod.yml
+# Rename to .gitpod.yml before using
+
 image:
   file: .gitpod.Dockerfile
 
